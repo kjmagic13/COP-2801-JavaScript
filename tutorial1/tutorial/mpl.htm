@@ -24,15 +24,19 @@
 
 	<script type="text/javascript">
 
-	/*
-		
-	*/
+		function showEM(userName, emServer) {
+			/*
+			The show showEM() function displays a link to the users email address.
+			The text of the user and email server names are entered in
+			reverse order to twhart email harvesters.
+			*/
 
-	function showEM(userName, emServer) {
-			var emServer = emServer || "mpl.gov"; // implement D.R.Y. coding principal.
-			var emLink = userName + "@" + emServer; // 
+			userName = stringReverse(userName); // reverse the text of the userName parameter
+			emServer = stringReverse(emServer); // reverse the text of the emServer parameter
+
+			var emLink = userName + "@" + emServer; // combine the text of userName and emServer
 			document.write("<a href='mailto:"+emLink+"'>");
-			document.write( stringReverse(emLink) );
+			document.write(emLink);
 			document.write("</a>");
 		}
 
@@ -81,7 +85,7 @@
 						<td>555-3100</td>
 						<td class="email">
 							<script type="text/javascript">
-								showEM("cadler");
+								showEM("reldac", "vog.lpm");
 							</script>
 						</td>
 					</tr>
@@ -90,7 +94,7 @@
 						<td>555-3145</td>
 						<td class="email">
 							<script type="text/javascript">
-								showEM("mikeli");
+								showEM("ilekim", "vog.lpm");
 							</script>
 						</td>
 					</tr>
@@ -99,7 +103,7 @@
 						<td>555-4389</td>
 						<td class="email">
 							<script type="text/javascript">
-								showEM("khoward");
+								showEM("drawohk", "vog.lpm");
 							</script>
 						</td>
 					</tr>
@@ -108,7 +112,7 @@
 						<td>555-7811</td>
 						<td class="email">
 							<script type="text/javascript">
-								showEM("rhope");
+								showEM("epohr", "vog.lpm");
 							</script>
 						</td>
 					</tr>
@@ -117,7 +121,7 @@
 						<td>555-9001</td>
 						<td class="email">
 							<script type="text/javascript">
-								showEM("wlewie");
+								showEM("siwelw", "vog.lpm");
 							</script>
 						</td>
 					</tr>
@@ -126,7 +130,7 @@
 						<td>555-9391</td>
 						<td class="email">
 							<script type="text/javascript">
-								showEM("bforth");
+								showEM("htrofb", "vog.lpm");
 							</script>
 						</td>
 					</tr>
