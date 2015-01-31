@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- 
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 3
+   Case Problem 1
+
+   The Lighthouse
+   Author: Kevin McCarthy
+   Date: 1/31/15   
+
+   Filename:         clist.htm
+   Supporting files: lhouse.css, list.js, logo.jpg
+
+-->
+<title>The Lighthouse</title>
+<link href="lhouse.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="list.js"></script>
+<script type="text/javascript">
+	function amountTotal() {
+		var total = 0;
+		for (var i = 0; i < amount.length; i++) {
+			total = total + amount[i];
+		};
+		return total;
+	}
+	amountTotal();
+</script>
+
+</head>
+
+<body>
+
+	<div id="title">
+		<img src="logo.jpg" alt="The Lighthouse" />
+		The Lighthouse<br />
+		543 Oak Street<br />
+		Owensboro, KY &nbsp;&nbsp;42302<br/>
+		(270) 555-7511
+	</div>
+
+	<div id="data_list">
+
+		<table border="1" rules="rows" cellspacing="0">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Amount</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Address</th>
+				</tr>
+			</thead>
+			<tbody>
+				<script type="text/javascript">
+					for (var i = 0; i < amount.length; i++) {
+						if (i%2) { document.write("<tr>"); } else { document.write("<tr class=\"yellowrow\">"); };
+						document.write("<td>"+date[i]+"</td><td class=\"amt\">"+amount[i]+"</td><td>"+firstName[i]+"</td><td>"+lastName[i]+"</td>");
+						document.write("<td>"+street[i]+"<br> "+city[i]+", "+state[i]+" "+zip[i]+"</td>");
+						document.write("</tr>");
+					};
+				</script>
+			</tbody>
+		</table>
+
+	</div>
+
+	<div id="totals">
+
+		<table border="1" cellspacing="0">
+			<thead>
+				<tr>
+					<th id="sumTitle" colspan="2">Summry</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Contributors</th>
+					<th>
+						<script type="text/javascript">
+							document.write(amount.length);
+						</script>
+					</th>
+				</tr>
+				<tr>
+					<th>Amount</th>
+					<th>
+						<script type="text/javascript">
+							document.write("$"+amountTotal());
+						</script>
+					</th>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+</body>
+</html>
