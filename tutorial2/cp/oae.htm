@@ -33,6 +33,7 @@ functions.js, oae.jpg, quiz.css
 	}
 
 	function startClock() {
+		document.quiz.startclock.disabled=true;
 		showQuiz();
 		clockId = setInterval('runClock()', 1000);
 	}
@@ -73,7 +74,7 @@ functions.js, oae.jpg, quiz.css
 			</p>
 
 			<p id="buttons">
-				<input type="button" value="Start Quiz" onclick="startClock();" />
+				<input id="startclock" name="startclock" type="button" value="Start Quiz" onclick="startClock();" />
 				<br />
 				<input name="quizclock" id="quizclock" value="0" />
 			</p>
