@@ -3,8 +3,8 @@
    Tutorial 11
    Case Problem 1
 
-   Author: 
-   Date:   
+   Author: Kevin McCarthy
+   Date: 1/31/15   
 
    Filename: cart.js
 
