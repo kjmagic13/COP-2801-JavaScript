@@ -3,8 +3,8 @@
    Tutorial 5
    Case Problem 1
 
-   Author:   
-   Date:     
+   Author: Kevin McCarthy  
+   Date: 2/2/2015    
 
    Filename: links.js
 

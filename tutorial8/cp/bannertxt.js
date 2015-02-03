@@ -3,8 +3,8 @@
    Tutorial 8
    Case Problem 1
 
-   Author:   
-   Date:     
+   Author: Kevin McCarthy  
+   Date: 2/2/2015    
 
    Filename: banners.js
 

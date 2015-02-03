@@ -3,8 +3,8 @@
    Tutorial 5
    Tutorial Case
 
-   Author:   
-   Date:     
+   Author: Kevin McCarthy  
+   Date: 2/2/2015    
 
    Filename: contact.js
 

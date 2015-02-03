@@ -3,8 +3,8 @@
    Tutorial 7
    Tutorial Case
 
-   Author:   
-   Date:     
+   Author: Kevin McCarthy  
+   Date: 2/2/2015    
 
    Filename: switchStyle.js
 
