@@ -48,6 +48,9 @@ function checkForm3() {
    else if (document.forms[0].cnumber.value.length == 0)
       {alert("You must enter the number on your credit card");
        return false;}
+   else if (checkNumber() == false)
+      { alert("Your card number is not valid");
+      return false; }
    else return true;
 }
 
@@ -58,6 +61,21 @@ function selectedCard() {
       if (document.forms[0].ccard[i].checked) card=i;
    }
    return card;
+}
+
+function checkNumber() {
+   wsregx = /\s/g;
+   var cnum = document.forms[0].cnumber.value.replace(wsregx,"");
+
+   switch (selectedCard()) {
+      case 0: cregx = /^3[47]\d{13}$/; break;
+      case 1: cregx = /^30[0-5]\d{11}$|^3[68]\d{12}$/; break;
+      case 2: cregx = /^6011\d{12}$/; break;
+      case 3: cregx = /^5[1-5]\d{14}$/; break;
+      case 4: cregx = /^4(\d{12}|\d{15})$/; break;
+   }
+
+   return (cregx.test(cnum) && luhn(cnum));
 }
 
 
