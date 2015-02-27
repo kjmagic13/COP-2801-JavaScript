@@ -43,8 +43,8 @@ function setTabs() {
 		if (allElems[i].className == "tab") {
 			menuTabs.push(allElems[i]);
 			allElems[i].onclick = showTab;
-		};
-	};
+		}
+	}
 	currentTab = menuTabs[0];
 }
 
@@ -54,7 +54,7 @@ function showTab() {
 	var tabList = this.getElementsByTagName("ul")[0];
 	tabList.style.zIndex = maxZ;
 	currentTab = tabList;
-	currentTab.style.backgroundColor = 'rgb(' + [221,221,255].join(',') + ')';;
+	currentTab.style.backgroundColor = 'rgb(' + [221,221,255].join(',') + ')';
 }
 
 

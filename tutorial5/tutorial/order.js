@@ -45,6 +45,7 @@ function todayTxt() {
 }
 
 function startForm() {
+
    document.forms[0].date.value = todayTxt();
    document.forms[0].prod.focus();
 
