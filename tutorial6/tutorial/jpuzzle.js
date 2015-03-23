@@ -113,6 +113,8 @@ var keyPiece = null;
 var keyIndex = null;
 var selectMode = true;
 
+console.log( window.event.keycode );
+
 window.onload = init;
 
 function jumbleIt() {
