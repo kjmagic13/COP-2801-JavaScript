@@ -4,7 +4,7 @@
    Tutorial Case
 
    Author: Kevin McCarthy  
-   Date: 2/2/2015    
+   Date: 3/22/2015    
    Filename: kgfunctions.js
 
 
@@ -77,5 +77,17 @@ function randOrder(){
    return 0.5 - Math.random();
 }
 
+function addEvent(object, evName, fnName, cap) {
+   if (object.attachEvent)
+      object.attachEvent("on"+ evName, fnName);
+   else
+      object.addEventListener(evName, fnName, cap);
+}
 
+function removeEvent(object, evName, fnName, cap) {
+   if (object.detachEvent)
+      object.detachEvent("on"+ evName, fnName);
+   else
+      object.removeEventListener(evName, fnName, cap);
+}
  
