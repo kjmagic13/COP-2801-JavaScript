@@ -77,7 +77,16 @@
 
       function updateCount(e) {
          countBox = document.getElementById("wordcount");
-         countBox.value = countText() + "/" + maxLength;
+         currentCount = countText();
+         countBox.value = currentCount + "/" + maxLength;
+
+         if (currentCount < maxLength) {
+            commentBox.style.backgroundColor = "white";
+            commentBox.style.color = "black";
+         } else {
+            commentBox.style.backgroundColor = "red";
+            commentBox.style.color = "white";
+         }
 
       }
 
