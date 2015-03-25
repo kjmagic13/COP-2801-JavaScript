@@ -38,10 +38,6 @@
       */
 
       var maxLength = 500;
-      // var currentCount = 0;
-
-      // console.log( window.event.keyCode );
-
 
       window.onload = init;
 
@@ -70,7 +66,7 @@
       function checkLength(e) {
          var evt = e || window.event;
 
-         if (countText() < maxLength) { return true; }
+         if ( countText() < maxLength ) { return true; }
          else if ( evt.keyCode == 8 || evt.keyCode == 46 ) { return true; }
          else { return false; }
       }
@@ -81,11 +77,11 @@
          countBox.value = currentCount + "/" + maxLength;
 
          if (currentCount < maxLength) {
-            commentBox.style.backgroundColor = "white";
-            commentBox.style.color = "black";
+            countBox.style.backgroundColor = "white";
+            countBox.style.color = "black";
          } else {
-            commentBox.style.backgroundColor = "red";
-            commentBox.style.color = "white";
+            countBox.style.backgroundColor = "red";
+            countBox.style.color = "white";
          }
 
       }

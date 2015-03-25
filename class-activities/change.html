@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script type="text/javascript">
+
+		function changeMe() {
+			var oldDiv = document.getElementById("mod");
+			oldDiv.firstChild.nodeValue = "I kissed a node, and I liked it";
+		}
+
+	</script>
+
+</head>
+<body>
+
+	<div id="mod" onmousedown="changeMe()">
+		This is a sentence!
+	</div>
+
+	<div id="append">
+		<p>I can haz appended nodes?</p>
+	</div>
+
+	<script type="text/javascript">
+
+		var newP = document.createElement("P");
+		var newText = document.createTextNode("the appended sentence.");
+
+		newP.appendChild(newText);
+		var element = document.getElementById("append");
+		element.appendChild(newP);
+
+	</script>
+
+</body>
+</html>
