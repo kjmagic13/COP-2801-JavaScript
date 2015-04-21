@@ -21,7 +21,7 @@ Constructor function to information about Spice Bowl products
 function storeItem()
 {
 	this.pid;
-	this.descr = null;
-	this.price = null;
+	this.descr;
+	this.price;
 	this.qty = 1;
 }

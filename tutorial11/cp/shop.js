@@ -21,32 +21,35 @@ addEvent(window, "load", startShopping, false);
 
 function startShopping() {
 
-	var SaltBody = document.getElementById('saltItems').tBodies[0].getElementsByTagName('tr');
+	var spiceTableRows = document.getElementById('saltItems').tBodies[0].getElementsByTagName('tr');
 
-	for(i=0;i <SaltBody.length; i++) {
+	for(i=0;i <spiceTableRows.length; i++) {
 
-		var prodId = SaltBody[i].getElementsByTagName('td')[0];
-		var prodName = SaltBody[i].getElementsByTagName('td')[1];
-		var prodDesc = SaltBody[i].getElementsByTagName('td')[2];
-		var prodPrice = SaltBody[i].getElementsByTagName('td')[3];
+		var prodId = spiceTableRows[i].getElementsByTagName('td')[0];
+		var prodName = spiceTableRows[i].getElementsByTagName('td')[1];
+		var prodDesc = spiceTableRows[i].getElementsByTagName('td')[2];
+		var prodPrice = spiceTableRows[i].getElementsByTagName('td')[3];
 		var qtySelect = document.getElementById(prodId.textContent + 'Qty');
+
 
 		var newItem = new storeItem();
 		newItem.pid = prodId.textContent;
 		newItem.prod = prodName.textContent;
 		newItem.desc = prodDesc.textContent;
 		newItem.price = prodPrice.textContent;
-		newItem.qty = qtySelect.value;
-		
-		qtySelect.currentItem = newItem;
+		newItem.qty = qtySelect.options[qtySelect.selectedIndex].value;
 
 		qtySelect.onchange = function() {
 			qtySelect.currentItem.qty = this.value;
 		}
 
-		var selCheckBox = SaltBody[i].getElementsByTagName('td')[5].firstChild;
+		qtySelect.currentItem = newItem;
+
+		var selCheckBox = spiceTableRows[i].getElementsByTagName('td')[5].firstChild;
 
 		selCheckBox.currentItem = newItem;
+		
+
 	}
 
 	var viewCartBtn = document.getElementById('viewCart');
@@ -68,11 +71,15 @@ function startShopping() {
 		for(i = 0; i < allCheckBoxes.length; i++) {
 
 			if(allCheckBoxes[i].checked == true) {
-				storeCookieField(allCheckBoxes[i].currentItem.pid,'prod',allCheckBoxes[i].currentItem.prod);
-				storeCookieField(allCheckBoxes[i].currentItem.pid,'desc',allCheckBoxes[i].currentItem.desc);
-				storeCookieField(allCheckBoxes[i].currentItem.pid,'price',allCheckBoxes[i].currentItem.price);
 
-				storeCookieField(allCheckBoxes[i].currentItem.pid,'qty',allCheckBoxes[i].currentItem.qty);
+				var qtySelect = document.getElementById(allCheckBoxes[i].currentItem.pid + 'Qty');
+
+				storeCookieField(allCheckBoxes[i].currentItem.pid, 'prod', allCheckBoxes[i].currentItem.prod);
+				storeCookieField(allCheckBoxes[i].currentItem.pid, 'desc', allCheckBoxes[i].currentItem.desc);
+				storeCookieField(allCheckBoxes[i].currentItem.pid, 'price', allCheckBoxes[i].currentItem.price);
+
+				storeCookieField(allCheckBoxes[i].currentItem.pid, 'qty', qtySelect.options[qtySelect.selectedIndex].value);
+
 				cartCount++;
 			}
 
