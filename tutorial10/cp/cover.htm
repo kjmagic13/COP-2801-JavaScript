@@ -16,12 +16,18 @@
    <title>Subscription</title>
    <link href="cover.css" rel="stylesheet" type="text/css" />
 
+   <script type="text/javascript">
+      function showForm() {
+         window.opener.location.href = "form.htm";
+         window.close();
+      }
+   </script>
 
 </head>
 <body>
 
    <div id="main">
-      <p><a href="form.htm">
+      <p><a href="form.htm" href="javascript:showForm();">
             <b>Order 12 issues <br />for: $9.95*</b>
          </a>
       </p>

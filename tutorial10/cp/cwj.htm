@@ -18,29 +18,35 @@
    Supporting files: cover.htm, cwj.css, cwj.jpg, logo.gif
 
 -->
-   <title>The Civil War Journal</title>
-   <link href="cwj.css" rel="stylesheet" type="text/css" />
+    <title>The Civil War Journal</title>
+    <link href="cwj.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+      function subscribe() {
+        window.open("cover.htm", "popWin", "width=125, height=240, top=10, left=10");
+      }
+    </script>
   
 </head>
 
-<body>
+<body onload="subscribe()">
 
    <div id="head">
       <img src="logo.gif" alt="The Civil War Journal" />
       <ul>
-         <li><a href="cwj.htm">Home Page
+         <li><a href="cwj.htm" onmouseover="window.status='Go to the Home Page';return true;" onmouseout="window.status='';">Home Page
              </a>
          </li>
-         <li><a href="#">News
+         <li><a href="#" onmouseover="window.status='View Current Events';return true;" onmouseout="window.status='';">News
              </a>
          </li>
-         <li><a href="#">Features
+         <li><a href="#" onmouseover="window.status='Go to Feautred Articles';return true;" onmouseout="window.status='';">Features
              </a>
          </li>
-         <li><a href="#">Forum
+         <li><a href="#" onmouseover="window.status='Go To Civil War Forum';return true;" onmouseout="window.status='';">Forum
              </a>
          </li>
-         <li><a href="form.htm">Subscriptions
+         <li><a href="form.htm" onmouseover="window.status='Subscribe Today!';return true;" onmouseout="window.status='';">Subscriptions
              </a>
          </li>
       </ul>
