@@ -54,3 +54,23 @@ function writeContent(windowObj, choice, guess) {
    windowObj.document.close();
 }
 
+function popWin(url) {
+   pop = window.open(url,"pop","width=330,height=220,scrollbars=yes"); 
+   testpop = (pop == null || typeof(pop) == "undefined") ? true: false; 
+   return testpop;
+}
+
+function answer(choice, guess) {
+   ansWin = window.open("","","width=250, height=100, left=250, screenX=250,top=250, screenY=250");
+   nopop = (ansWin == null || typeof(ansWin) == "undefind") ? true : false;
+
+   if (nopop) {
+      if (guess) {
+         alert(choice + " is correct!");
+      } else {
+         alert(choice + " is incorrect. Try again.");
+      }
+   } else {
+      writeContent(ansWin, choice, guess);
+   }
+}

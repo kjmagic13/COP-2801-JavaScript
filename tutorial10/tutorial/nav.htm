@@ -21,6 +21,21 @@
    <title>iMusicHistory Navigation Frame</title>
    <link href="imusicstyles.css" rel="stylesheet" type="text/css" />
 
+   <script type="text/javascript">
+
+      if (top.location.href = self.location.href) {
+         top.location.href = "terms.htm";
+      }
+      
+      function collapse() {
+         parent.document.getElementById("Glossary").rows = "160, *, 1";
+      }
+
+      function expand() {
+         parent.document.getElementById("Glossary").rows = "160, *, 64";
+      }
+   </script>
+
 
 </head>
 
@@ -35,11 +50,11 @@
    <div id="navLinks">
 
       <div id="navLeft" class="navCol">
-         <a>Hide <br /> Navigation Bar</a>
+         <a href="javascript:collapse()">Hide <br /> Navigation Bar</a>
       </div>
 
       <div id="navRight" class="navCol">
-         <a>Display <br /> Navigation Bar</a>
+         <a href="javascript:expand()">Display <br /> Navigation Bar</a>
       </div>
 
       <div id="navCenter" class="navCol">
